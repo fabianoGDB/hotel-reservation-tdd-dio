@@ -8,6 +8,19 @@
           "build/netstandard2.0/coverlet.collector.targets": {}
         }
       },
+      "FluentAssertions/8.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Mvc.Testing/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -1069,16 +1082,6 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
-      },
-      "HotelReservation.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "compile": {
-          "bin/placeholder/HotelReservation.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HotelReservation.Core.dll": {}
-        }
       }
     }
   },
@@ -1151,6 +1154,31 @@
         "coverlet-icon.png",
         "coverlet.collector.6.0.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "FluentAssertions/8.3.0": {
+      "sha512": "iri1druxHPUAvaFqTUKJG7NOHwnOLmWwfDorgezZWpeBWBJmk2o8niI7jL7zW9TEFGnUpMJi/JLG6FXgr3cM3A==",
+      "type": "package",
+      "path": "fluentassertions/8.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "LICENSE",
+        "fluentassertions.8.3.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
       ]
     },
     "Microsoft.AspNetCore.Mvc.Testing/9.0.6": {
@@ -2533,16 +2561,11 @@
         "xunit.runner.visualstudio.2.8.2.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
-    },
-    "HotelReservation.Core/1.0.0": {
-      "type": "project",
-      "path": "../HotelReservation.Core/HotelReservation.Core.csproj",
-      "msbuildProject": "../HotelReservation.Core/HotelReservation.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "HotelReservation.Core >= 1.0.0",
+      "FluentAssertions >= 8.3.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 9.0.6",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "coverlet.collector >= 6.0.2",
@@ -2557,11 +2580,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
-      "projectName": "HotelReservation.Tests",
-      "projectPath": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\HotelReservation.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\HotelReservation.IntegrationTests\\HotelReservation.IntegrationTests.csproj",
+      "projectName": "HotelReservation.IntegrationTests",
+      "projectPath": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\HotelReservation.IntegrationTests\\HotelReservation.IntegrationTests.csproj",
       "packagesPath": "C:\\Users\\docto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\obj\\",
+      "outputPath": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Tests\\HotelReservation.IntegrationTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2581,11 +2604,7 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {
-            "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Core\\HotelReservation.Core.csproj": {
-              "projectPath": "C:\\Users\\docto\\projetos\\dio\\hotel-tdd\\HotelReservation.Core\\HotelReservation.Core.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -2604,6 +2623,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[8.3.0, )"
+          },
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
             "version": "[9.0.6, )"
